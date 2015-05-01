@@ -46,17 +46,17 @@
 				<version>${assembly-plugin.version}</version>
 				<executions>
 					<execution>
-						<id>jar-with-dependencies</id>
+						<id>with-dependencies</id>
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
-						<configuration>
-							<descriptorRefs>
-								<descriptorRef>
-									with-dependencies
-								</descriptorRef>
-							</descriptorRefs>
+<!-- 						<configuration> -->
+<!-- 							<descriptorRefs> -->
+<!-- 								<descriptorRef> -->
+<!-- 									with-dependencies -->
+<!-- 								</descriptorRef> -->
+<!-- 							</descriptorRefs> -->
 <!-- 							<archive> -->
 <!-- 								<manifest> -->
 <!-- 									<mainClass> -->
@@ -64,7 +64,7 @@
 <!-- 									</mainClass> -->
 <!-- 								</manifest> -->
 <!-- 							</archive> -->
-						</configuration>
+<!-- 						</configuration> -->
 					</execution>
 				</executions>
 			</plugin>
