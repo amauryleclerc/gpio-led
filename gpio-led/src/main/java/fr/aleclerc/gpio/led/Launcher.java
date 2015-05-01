@@ -18,7 +18,7 @@ public class Launcher {
 	                RaspiPin.GPIO_01,
 	                "LED1",
 	                PinState.LOW);
-	        led1.pulse(1000);
+	        led1.pulse(1000, true);
 	      
 	 
 	        /* Close all open connections. */
