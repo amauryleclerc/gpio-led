@@ -4,6 +4,7 @@
 	<groupId>fr.aleclerc</groupId>
 	<artifactId>gpio-led</artifactId>
 	<version>0.0.1</version>
+	<packaging>war</packaging>
 	<properties>
 		<pi4j.version>1.0</pi4j.version>
 		<compiler-plugin.version>3.1</compiler-plugin.version>
@@ -41,16 +42,16 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>${assembly-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>with-dependencies</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
+<!-- 			<plugin> -->
+<!-- 				<artifactId>maven-assembly-plugin</artifactId> -->
+<!-- 				<version>${assembly-plugin.version}</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>with-dependencies</id> -->
+<!-- 						<phase>package</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>single</goal> -->
+<!-- 						</goals> -->
 <!-- 						<configuration> -->
 <!-- 							<descriptorRefs> -->
 <!-- 								<descriptorRef> -->
@@ -65,10 +66,10 @@
 <!-- 								</manifest> -->
 <!-- 							</archive> -->
 <!-- 						</configuration> -->
-					</execution>
-				</executions>
-			</plugin>
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
 		</plugins>
 	</build>
-	<packaging>war</packaging>
+	
 </project>
