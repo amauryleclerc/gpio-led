@@ -53,7 +53,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        org.calpilot.Pi4jTest
+                                        fr.aleclerc.gpio.led.Launcher
                                     </mainClass>
                                 </manifest>
                             </archive>
