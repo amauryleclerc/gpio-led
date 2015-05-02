@@ -1,5 +1,6 @@
 package fr.aleclerc.gpio.led.ws.service;
 
+import javax.annotation.PostConstruct;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -14,16 +15,23 @@ import com.pi4j.io.gpio.RaspiPin;
 @Path("led")
 public class LedRessource {
 	
+	private GpioController gpio ;
+	private GpioPinDigitalOutput led1 ;
+	
+	@PostConstruct
+	public void init() {
+		 gpio = GpioFactory.getInstance();
+		 led1 = gpio.provisionDigitalOutputPin (
+	                RaspiPin.GPIO_01,
+	                "LED1",
+	                PinState.LOW);
+	}
 	
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        final GpioController gpio = GpioFactory.getInstance();
-        final GpioPinDigitalOutput led1 = gpio.provisionDigitalOutputPin (
-                RaspiPin.GPIO_01,
-                "LED1",
-                PinState.LOW);
+       
         led1.blink(500, 10000);
-        return "Got it!";
+        return "CLIGNOTE !!";
     }
 }
