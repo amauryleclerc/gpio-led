@@ -16,7 +16,6 @@ public class LedRessource {
 	
 	
     @GET
-    @Path("clignote")
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
         final GpioController gpio = GpioFactory.getInstance();
