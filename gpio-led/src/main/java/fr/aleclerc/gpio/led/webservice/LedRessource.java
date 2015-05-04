@@ -1,7 +1,6 @@
 package fr.aleclerc.gpio.led.webservice;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import javax.inject.Singleton;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
@@ -10,9 +9,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
-
 import fr.aleclerc.gpio.led.infra.service.LedService;
 
 
@@ -20,18 +16,18 @@ import fr.aleclerc.gpio.led.infra.service.LedService;
 @Path("led")
 public class LedRessource {
 	
-	private  GpioController gpio ;
+	
 	private  LedService ledService;
 	
 	@PostConstruct
 	public void init() {
-		gpio = GpioFactory.getInstance();
-		ledService = new LedService(gpio);
+	
+		ledService = LedService.getInstance();
 	}
-	@PreDestroy
-	public void detroy(){
-		gpio.shutdown();
-	}
+//	@PreDestroy
+//	public void detroy(){
+//		gpio.shutdown();
+//	}
 	
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)

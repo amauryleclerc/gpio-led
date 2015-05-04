@@ -67,7 +67,7 @@ public class LedStatus   {
     }
 
 
-    private static void broadcast(String msg) {
+    public static void broadcast(String msg) {
         for (LedStatus client : connections) {
             try {
                 synchronized (client) {
