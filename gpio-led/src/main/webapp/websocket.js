@@ -22,8 +22,7 @@ function onOpen() {
 }
 
 function onMessage(evt) {
-    console.log("onMessage: " + evt.data);
-  
+    writeToScreen("onMessage: " + evt.data);
 }
 
 function onError(evt) {
@@ -32,6 +31,7 @@ function onError(evt) {
 
 function writeToScreen(message) {
 	console.log(message);
+	$("#log").append("<p>"+message+"</p>");
 }
 
 

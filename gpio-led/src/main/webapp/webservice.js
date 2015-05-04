@@ -8,7 +8,9 @@ function off(){
 }
 
 function blink(){
-	var url ="ws/led";
+	var nb = $("#nb").val();
+	var sec = $("#sec").val();
+	var url ="ws/led?nb="+nb+"&sec="+sec;
 	 sendRequest(url);
 }
 
