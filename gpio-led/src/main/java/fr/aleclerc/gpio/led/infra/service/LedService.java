@@ -21,4 +21,13 @@ public class LedService {
 		int secON = (int) (sec * 1000) /( nb * 2);
 		led1.blink(secON, sec * 1000);
 	}
+
+	public void on() {
+		led1.setState(true);
+		
+	}
+	public void off() {
+		led1.setState(false);
+		
+	}
 }

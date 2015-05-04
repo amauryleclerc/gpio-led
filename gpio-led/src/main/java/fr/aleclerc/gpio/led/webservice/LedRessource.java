@@ -1,4 +1,4 @@
-package fr.aleclerc.gpio.led.ws.service;
+package fr.aleclerc.gpio.led.webservice;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -14,6 +14,7 @@ import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 
 import fr.aleclerc.gpio.led.infra.service.LedService;
+
 
 @Singleton
 @Path("led")
@@ -40,5 +41,18 @@ public class LedRessource {
 		
 		return "CLIGNOTE !! ";
 	}
-	
+	@GET
+	@Path("on")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String on() {
+		ledService.on();
+		return "on";
+	}
+	@GET
+	@Path("off")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String off() {
+		ledService.off();
+		return "off";
+	}
 }
