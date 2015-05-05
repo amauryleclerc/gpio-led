@@ -3,13 +3,11 @@ var wsUri = "ws://" + document.location.hostname + ":" + document.location.port 
 //var wsUri = "ws://localhost:8080/gpio-led/websocket/ledstatus";
 var websocket = new WebSocket(wsUri);
 
-var username;
 websocket.onopen = function(evt) { onOpen(evt) };
 websocket.onmessage = function(evt) { onMessage(evt) };
 websocket.onerror = function(evt) { onError(evt) };
 
 function join() {
-    username = textField.value;
     websocket.send(username + " joined");
 }
 
